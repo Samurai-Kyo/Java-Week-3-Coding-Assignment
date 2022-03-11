@@ -1,0 +1,140 @@
+public class Week3Java {
+
+    public static void main(String[] args) {
+        int[] prblm1a = {3, 9, 23, 64, 2, 8, 28, 93};
+        prblm1a[prblm1a.length - 1] -= prblm1a[0];
+        printArray(prblm1a);
+
+        int[] prblm1b = {3, 9, 23, 64, 2, 8, 28, 93, 1000};
+        prblm1a[prblm1a.length - 1] -= prblm1a[0];
+        printArray(prblm1b);
+
+        double sum = 0;
+        for (int i : prblm1a) {
+            sum += i;
+        }
+        sum /= prblm1a.length;
+        System.out.println("Average of prblm1a: " + sum);
+
+        String[] prblm2a = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+        double sum2 = 0.0;
+        for (String i : prblm2a) {
+            sum2 += i.length();
+        }
+        double averageLetters = sum2 / prblm2a.length;
+        System.out.println("Average letters of prblm2a: " + averageLetters);
+
+        String allWords = "";
+        for (String x : prblm2a) {
+            allWords = x + " ";
+        }
+        System.out.println(allWords);
+
+
+        /**
+         * 3.	How do you access the last element of any array?
+         *         array[array.length()-1]
+         *
+         * 4.	How do you access the first element of any array?
+         *          array[0]
+         */
+
+        // 5
+        int[] nameLengths = new int[6];
+        int current = 0;
+        for (String x : prblm2a) {
+            nameLengths[current] = x.length();
+            current++;
+        }
+
+
+        //6
+        int totalLength = 0;
+        for (int i : nameLengths) {
+            totalLength += i;
+            current++;
+        }
+        System.out.println(totalLength);
+
+
+    }
+
+
+    // 7
+    static String chainConcatenat(String word, int n) {
+        String wordChain = "";
+        while (n > 0) {
+            wordChain += word;
+            n--;
+        }
+        return wordChain;
+    }
+
+    // 8
+    static String fullName(String firstName, String lastName) {
+        return firstName + " " + lastName;
+    }
+
+
+    // 9
+    static boolean arrayGreaterThan100(int[] array) {
+        int sum = 0;
+        for (int x : array) {
+            sum += x;
+        }
+        return sum > 100;
+    }
+
+    // 10
+    static double averageOfArray(double[] array) {
+        double sum = 0;
+        for (double x : array) {
+            sum += x;
+        }
+        return sum / array.length;
+    }
+
+    // 11
+    static boolean averageOfArray1bigger(double[] array, double[] array2) {
+        return averageOfArray(array) > averageOfArray(array2);
+    }
+
+
+    // 12
+    static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+        return (isHotOutside && (moneyInPocket > 10.50));
+    }
+
+    // 13
+    /**
+     * Determines if a player should get a card based on how low their total is
+     * limit is 18 in this case
+     * param int total
+     */
+    static boolean willHit(int total){
+        return total < 18;
+    }
+
+
+    static void printArray(int[] array) {
+        StringBuilder text = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            text.append(array[i]);
+            if (i != array.length - 1) {
+                text.append(", ");
+            }
+        }
+        System.out.println(text);
+    }
+
+    static void printArray(String[] array) {
+        StringBuilder text = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            text.append(array[i]);
+            if (i != array.length - 1) {
+                text.append(", ");
+            }
+        }
+        System.out.println(text);
+    }
+}
